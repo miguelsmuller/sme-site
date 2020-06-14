@@ -1,0 +1,11 @@
+footer{
+  padding-top: 50px;
+
+  .footer-ornament{
+    border-bottom: 5px solid darken( saturate( adjust-hue(map_get($colors, 'green'), 20), 47), 30 );
+    height: 180px;
+    background-image: url('/assets/images/church-silhouette.png');
+    background-position: left 2px;
+    background-repeat: no-repeat;
+  }
+}

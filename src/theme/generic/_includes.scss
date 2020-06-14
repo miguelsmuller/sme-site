@@ -1,0 +1,26 @@
+// BOOTSTRAP DEFAULT CONFIGURATION
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// BOOTSTRAP
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/close";
+
+// MATERIAL THEME CHANGING
+@import '~@angular/material/theming';
+@include mat-core();
+
+$app-primary: mat-palette($material-primary);
+$app-accent:  mat-palette($material-secondary);
+
+$app-theme: mat-light-theme($app-primary, $app-accent);
+@include angular-material-theme($app-theme);

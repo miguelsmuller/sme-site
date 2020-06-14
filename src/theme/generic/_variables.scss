@@ -1,0 +1,117 @@
+// Color system
+
+$white: #fff;
+$gray-100: #F9F9F9;
+$gray-200: #F4F4F4;
+$blue: #003344;
+$green: #5A965C;
+$secondary: $green;
+
+
+// Material Color Pallete
+
+$material-primary: (
+  50: $blue,
+  100: $blue,
+  200: $blue,
+  300: $blue,
+  400: $blue,
+  500: $blue,
+  600: $blue,
+  700: $blue,
+  800: $blue,
+  900: $blue,
+  A100: $blue,
+  A200: $blue,
+  A400: $blue,
+  A700: $blue,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$material-secondary: (
+  50: $green,
+  100: $green,
+  200: $green,
+  300: $green,
+  400: $green,
+  500: $green,
+  600: $green,
+  700: $green,
+  800: $green,
+  900: $green,
+  A100: $green,
+  A200: $green,
+  A400: $green,
+  A700: $green,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$material-primary: mat-palette($material-primary);
+$material-secondary: mat-palette($material-secondary);
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $gray-200;
+$body-color: $blue;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $blue;
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$list-inline-padding: 1rem;
+
+
+// List group
+
+$list-group-bg: transparent;
+$list-group-border-color: $gray-200;
+
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-font-size-lg: 1rem;
+$input-btn-padding-y-lg: .8rem;
+$input-btn-padding-x-lg: .8rem;
