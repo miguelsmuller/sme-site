@@ -1,0 +1,48 @@
+<section class="text-white bg-primary pt-4 pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3 class="font-weight-light text-uppercase m-0 text-center text-sm-left">Secretário(a)</h3>
+        <h3 class="font-weight-bold text-uppercase text-center text-sm-left m-0">{{departmentOwer}}</h3>
+      </div>
+    </div>
+
+    <div class="row pt-3 pb-3 pb-sm-5 justify-content-center d-flex align-items-center">
+      <div class="col-md-4">
+        <ul class="list-group list-group-with-icons pb-4 p-sm-0">
+          <li class="list-group-item justify-content-center justify-content-sm-start pl-0 border-0">
+            <i class="fa fa-map-marker text-success" aria-hidden="true"></i>
+            <span [innerHTML]="departmentAddres"><a href="" class="text-white"><small>(Ver localização)</small></a></span>
+          </li>
+          <li class="list-group-item justify-content-center justify-content-sm-start pl-0 border-0">
+            <i class="fa fa-clock-o text-success" aria-hidden="true"></i>
+            <span [innerHTML]="departmentOpeningHours"></span>
+          </li>
+          <li class="list-group-item justify-content-center justify-content-sm-start pl-0 border-0">
+            <i class="fa fa-phone text-success" aria-hidden="true"></i>
+            <span [innerHTML]="departmentPhone"></span>
+          </li>
+          <li class="list-group-item justify-content-center justify-content-sm-start pl-0 border-0">
+            <i class="fa fa-envelope text-success" aria-hidden="true"></i>
+            <a href="mailto://{{departmentMail}}" class="text-white">{{departmentMail}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <p class="text-justify">A Secretaria Municipal de Educação é o órgão da Prefeitura responsável por elaborar a política educacional do município, coordenar a sua implantação e avaliar os resultados, com o objetivo de assegurar a excelência na Educação Infantil e no Ensino Fundamental Público.</p>
+
+        <p class="text-justify">Sua missão é garantir aos munícipes uma educação pública inclusiva, sustentável, democrática e participativa, visando o desenvolvimento integral do ser humano e seu preparo para o exercício da cidadania.</p>
+
+        <p class="text-justify">Cabe à Secretaria Municipal de Educação cuidar das crianças e jovens da Educação Infantil (6 meses a 5 anos); do Ensino Fundamental (1° ao 9° ano) e da Educação de Jovens e Adultos.</p>
+
+        <p class="text-justify">Esses cuidados devem incluir a garantia de que as crianças da Rede Pública de Educação aprendam a ler, escrever e calcular com proficiência na idade certa.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center d-flex align-items-center">
+      <div class="col-md-9">
+        <app-department-actions></app-department-actions>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<div class="modal-content border-0">
+  <div class="modal-header bg-primary">
+    <h5 class="modal-title font-weight-bold text-white">Unidades Escolares</h5>
+    <button class="close" data-dismiss="modal" aria-label="Close" mat-dialog-close>
+      <span aria-hidden="true" class="text-white">&times;</span>
+    </button>
+  </div>
+  <mat-dialog-content class="m-0 p-0">
+    <div class="modal-body">
+      <ul class="list-group">
+
+        <li class="list-group-item my-2 border-0" *ngFor='let unit of units'>
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-0 font-weight-bold text-primary">{{unit.unitName}}</h5>
+            <small>{{unit.unitLocality}} - {{unit.unitType}}</small>
+          </div>
+          <p class="mb-0">{{unit.unitAddress}}</p>
+          <small>E-Mail: {{unit.unitEmail}}</small> - <small>{{unit.unitPhone}}</small>
+        </li>
+
+      </ul>
+    </div>
+  </mat-dialog-content>
+</div>

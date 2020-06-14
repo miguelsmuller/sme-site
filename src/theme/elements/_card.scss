@@ -1,0 +1,17 @@
+/* .card{
+    border: 1px solid darken( map_get($colors, 'white'), 17% );
+    background-color: lighten( map_get($colors, 'white'), 3% );
+    padding: 15px;
+
+    &:hover{
+        text-decoration: none;
+    }
+
+    &.card-over{
+        &:hover{
+            @include with-prefix('transform', scale(1.025));
+            background-color: lighten( map_get($colors, 'white'), 1% );
+        }
+    }
+} */
+

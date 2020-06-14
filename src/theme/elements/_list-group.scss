@@ -1,0 +1,13 @@
+.list-group{
+  &.list-group-with-icons{
+    .list-group-item{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      i{
+        padding-right: 1rem;
+      }
+    }
+  }
+}

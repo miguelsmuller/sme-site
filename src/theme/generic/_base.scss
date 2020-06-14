@@ -1,0 +1,15 @@
+// THEME DEFAULT CONFIGS
+html, body {
+  font-size: 14px;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.cols-stripedes{
+  background-color: $white;
+
+  &:nth-child(even) {
+    background-color: $gray-100;
+  }
+}

@@ -1,0 +1,136 @@
+<div class="modal-content border-0">
+  <div class="modal-header bg-primary">
+    <h5 class="modal-title font-weight-bold text-white">Ouvidoria da Educação</h5>
+    <button class="close" data-dismiss="modal" aria-label="Close" mat-dialog-close>
+      <span aria-hidden="true" class="text-white">&times;</span>
+    </button>
+  </div>
+  <mat-dialog-content class="m-0 p-0">
+    <div class="pt-3">
+      <div [formGroup]="form">
+        <div fxLayout="column" fxLayoutAlign="start stretch">
+          <div class="container-fluid">
+
+            <div class="row pb-2">
+              <div class="col-sm">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Qual seu nome completo?</mat-label>
+                  <input matInput placeholder="Ex. Fulano Beltrano Ciclano" formControlName="nomeSolicitante" value="" cdkFocusInitial>
+                  <mat-error *ngIf="form.controls.nomeSolicitante.hasError('required')">
+                    Seu nome completo é um campo <strong>obrigatório</strong>.
+                  </mat-error>
+                  <mat-error *ngIf="form.controls.nomeSolicitante.hasError('minLength')">
+                    Quantidade de caracteres <strong>inferior</strong> ao permitido.
+                  </mat-error>
+                  <mat-error *ngIf="form.controls.nomeSolicitante.hasError('maxLength')">
+                    Quantidade de caracteres <strong>inferior</strong> ao permitido.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row pb-2">
+              <div class="col-sm">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Qual seu e-mail?</mat-label>
+                  <input matInput placeholder="Ex. nome@dominio.com.br" formControlName="email" value="">
+                  <mat-error *ngIf="form.controls.email.hasError('required')">
+                    Seu email é um campo <strong>obrigatório</strong>.
+                  </mat-error>
+                  <mat-error *ngIf="form.controls.email.hasError('email')">
+                    Seu email deve ser um email <strong>válido</strong>.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="col-sm">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Qual seu telefone?</mat-label>
+                  <input type="tel" matInput placeholder="Ex.: (00) 00000-0000" formControlName="telefone" value="">
+                  <mat-error *ngIf="form.controls.telefone.hasError('required')">
+                    Seu telefone é um campo <strong>obrigatório</strong>.
+                  </mat-error>
+                  <mat-error *ngIf="form.controls.telefone.hasError('minLength')">
+                    Número de digitos <strong>inferior</strong> ao permitido.
+                  </mat-error>
+                  <mat-error *ngIf="form.controls.telefone.hasError('maxLength')">
+                    Número de digitos <strong>inferior</strong> ao permitido.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row pb-2">
+              <div class="col-sm">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>É morador de qual distrito?</mat-label>
+                  <mat-select formControlName="distrito">
+                    <mat-optgroup *ngFor="let group of cityLocations" [label]="group.name">
+                      <mat-option *ngFor="let location of group.options" [value]="location">
+                        {{location}}
+                      </mat-option>
+                    </mat-optgroup>
+                  </mat-select>
+                  <mat-error *ngIf="form.controls.distrito.hasError('required')">
+                    Seu distrito é um campo <strong>obrigatório</strong>.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="col-sm">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Que tipo de manifestação deseja fazer?</mat-label>
+                  <mat-select formControlName="tipoManifestacao">
+                    <mat-option *ngFor="let type of manifestationType" [value]="type" [value]="1">{{type}}</mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="form.controls.tipoManifestacao.hasError('required')">
+                    Seu tipo de manifestação é um campo <strong>obrigatório</strong>.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row pb-2">
+              <div class="col-sm">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Para qual departamente ou divisão você quer enviar sua manifestação?</mat-label>
+                  <mat-select formControlName="destinoMensagem">
+                    <mat-optgroup *ngFor="let group of departmentSectors" [label]="group.name">
+                      <mat-option *ngFor="let sectors of group.options" [value]="sectors.email">
+                        {{sectors.title}}
+                      </mat-option>
+                    </mat-optgroup>
+                  </mat-select>
+                  <mat-error *ngIf="form.controls.destinoMensagem.hasError('required')">
+                    O destino da sua mensagem é um campo <strong>obrigatório</strong>.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm">
+                <mat-form-field appearance="fill" class="w-100 mb-1">
+                  <mat-label>Qual mensagem deseja enviar?</mat-label>
+                  <textarea formControlName="mensagem" rows="5" matInput placeholder="Escreva aqui a mensagem que você deseja encaminhar"></textarea>
+                  <mat-error *ngIf="form.controls.mensagem.hasError('required')">
+                    Você não pode enviar uma mensagem em <strong>branco</strong>.
+                  </mat-error>
+                  <mat-error *ngIf="form.controls.nomeSolicitante.hasError('minLength')">
+                    Quantidade de caracteres na mensagem <strong>inferior</strong> ao permitido.
+                  </mat-error>
+                  <mat-error *ngIf="form.controls.nomeSolicitante.hasError('maxLength')">
+                    Quantidade de caracteres na mensagem <strong>inferior</strong> ao permitido.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </mat-dialog-content>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-lg font-weight-bold" (click)="sendEmail()" [disabled]="!form.valid">Enviar formulário</button>
+  </div>
+</div>
