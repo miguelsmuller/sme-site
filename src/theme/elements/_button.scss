@@ -1,0 +1,11 @@
+.btn{
+  &.btn-with-icon{
+    i{
+      float: right;
+      position: absolute;
+      right: 35px;
+      top: 40%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

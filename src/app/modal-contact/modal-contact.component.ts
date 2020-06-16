@@ -59,6 +59,7 @@ export class ModalContactComponent implements OnInit {
             {duration: 3000}
           );
           this.form.reset();
+          this.dialogRef.close();
         },
         (err) => {
           this.snackBar.open( 'Não foi possível enviar sua mesangem. Tente mais tarde.', 'OK',

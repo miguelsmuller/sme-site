@@ -1,19 +1,21 @@
 export const environment = {
   production: true,
   apiEmail: {
-    url: 'https://api.mailgun.net/v3/sandbox621baf2647f64b278c2d8cda67bbf9eb.mailgun.org',
+    url: 'https://api.mailgun.net/v3/devim.com.br',
     key: 'api:key-84f5f5e31a9a249181bd9fd3a16f4248',
-    emailFrom: 'postmaster@sme.rioclaro.rj.gov.br'
+    emailFrom: 'SME-Site postmaster@sme.rioclaro.com.br'
   },
   apiNews: {
-    url: 'http://www.rioclaro.rj.gov.br/wp-json/wp/v2/posts?tags=75&per_page=6&_fields=title,link,date,categories,tags,type'
+    url: 'https://www.rioclaro.rj.gov.br/wp-json/wp/v2',
+    count: '4',
+    tag: '75'
   },
   departmentName: 'Secretaria Municipal de Educação',
   departmentOwer: 'Ana Paula Silva',
   departmentAddres: 'Avenida João Batista Portugal, 230<br/>Centro – Rio Claro<br/>CEP: 27.460-000',
   departmentOpeningHours: 'De segunda-feira a sexta-feira<br/> 8:00h às 12:00h e 13:00h às 17:00h',
   departmentPhone: '(24) 3332-1717 / (24) 3332-1292 <br/> Ramal: 240',
-  departmentMail: 'sme@rioclaro.rj.gov.br',
+  departmentMail: 'educa@rioclaro.rj.gov.br',
   departmentSectors: [
     {
       name: 'Gabinete ',
@@ -23,25 +25,29 @@ export const environment = {
     }, {
       name: 'Departamentos',
       options: [
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Departamento Administrativo'},
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Departamento Pedagógico'},
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Departamento Compras'},
+        {email: 'Departamento Administrativo', title: 'Departamento Administrativo'},
+        {email: 'Departamento Pedagógico', title: 'Departamento Pedagógico'},
+        {email: 'Departamento Compras', title: 'Departamento Compras'},
       ]
     }, {
-      name: 'Divisão',
+      name: 'Divisões Educacionais',
       options: [
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Divisão de Educação Infantil'},
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Divisão de Ensino Fundamental e EJA'},
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Divisão de Educação Especial'},
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Divisão de Almoxarifado'},
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Divisão de Tecnologia da Informação'},
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Divisão de Transporte Escolar'},
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Divisão de Manutenção e Conservação'},
+        {email: 'Divisão de Educação Infantil', title: 'Divisão de Educação Infantil'},
+        {email: 'Divisão de Ensino Fundamental e EJA', title: 'Divisão de Ensino Fundamental e EJA'},
+        {email: 'Divisão de Educação Especial', title: 'Divisão de Educação Especial'},
+      ]
+    }, {
+      name: 'Divisões Administrativas',
+      options: [
+        {email: 'Divisão de Almoxarifado', title: 'Divisão de Almoxarifado'},
+        {email: 'Divisão de Tecnologia da Informação', title: 'Divisão de Tecnologia da Informação'},
+        {email: 'Divisão de Transporte Escolar', title: 'Divisão de Transporte Escolar'},
+        {email: 'Divisão de Manutenção e Conservação', title: 'Divisão de Manutenção e Conservação'},
       ]
     }, {
       name: 'Outros',
       options: [
-        {email: 'educa@rioclaro.rj.gov.br', title: 'Não sei a opção correta'},
+        {email: 'Não sei a opção correta', title: 'Não sei a opção correta'},
       ]
     }
   ],
