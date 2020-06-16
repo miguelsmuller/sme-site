@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, retry } from 'rxjs/operators';
 import { Noticia } from '@app/interfaces';
 import { environment } from '@env/environment';
 
@@ -9,32 +9,57 @@ import { environment } from '@env/environment';
   providedIn: 'root'
 })
 export class Api {
-  apiNews = environment.apiNews;
-  apiEmail = environment.apiEmail;
+  apiNewsOptions = environment.apiNews;
+  apiEmailOptions = environment.apiEmail;
 
   constructor(
-    private http: HttpClient
+    private serviceRequest: HttpClient
   ) { }
 
   getNews(): Observable<Noticia[]> {
-    const apiHeaders = new HttpHeaders().set('Access-Control-Allow-Origin', '*');
-    return this.http.get<Noticia[]>(this.apiNews.url, { headers: apiHeaders });
+    const httpUrl = `${this.apiNewsOptions.url}/posts`;
+
+    let  httpParams = new HttpParams();
+    httpParams = httpParams.append('tags', this.apiNewsOptions.tag);
+    httpParams = httpParams.append('per_page', this.apiNewsOptions.count);
+    httpParams = httpParams.append('_fields', 'title, link, date');
+
+    return this.serviceRequest.get<Noticia[]>(httpUrl, { params: httpParams }).pipe(
+      retry(1),
+      catchError(error => {
+        return throwError(`Error Code: ${error.status}\nMessage: ${error.message}`);
+      })
+    );
   }
 
   sendEmail(data): Observable<any> {
-    const url = `${this.apiEmail.url}/messages`;
+    const httpUrl = `${this.apiEmailOptions.url}/messages`;
 
-    const apiHeaders = new HttpHeaders({
-      enctype: 'multipart/form-data',
-      Authorization: `Basic ${this.apiEmail.key}`
-    });
+    let apiHeaders = new HttpHeaders();
+    apiHeaders = apiHeaders.append('Authorization', 'Basic ' + btoa(this.apiEmailOptions.key));
 
-    const formData = new FormData();
-    formData.append('from', this.apiEmail.emailFrom);
-    formData.append('to', data.destinoMensagem);
-    formData.append('subject', data.tipoManifestacao);
-    formData.append('text', data.nomeSolicitante + ' - ' + data.distrito + ' - ' + data.telefone + ' - ' + data.mensagem);
+    const bodyFromName = data.nomeSolicitante;
+    const bodyFromEmail = data.email;
+    const bodyMessageType = data.tipoManifestacao;
+    const bodyMessageDestiny = data.destinoMensagem;
+    const bodyMessageDiscricty = data.distrito;
+    const bodyMessagePhone = data.telefone;
+    const bodyMessageOriginal = data.mensagem;
 
-    return this.http.post<any>(url, formData, { headers: apiHeaders });
+    const bodyMessage = `<strong>Solicitante</strong>: ${bodyFromName} <br/> <strong>Destino</strong>: ${bodyMessageDestiny} <br/> <strong>Distrito</strong>: ${bodyMessageDiscricty} <br/> <strong>Telefone</strong>: ${bodyMessagePhone} <br/> <strong>Mensagem</strong>: ${bodyMessageOriginal}`.replace(/\r?\n/g, '<br/>');
+
+    const httpData = new FormData();
+    httpData.set('from', this.apiEmailOptions.emailFrom);
+    httpData.set('to', 'educa@rioclaro.rj.gov.br');
+    httpData.set('subject', `${bodyMessageType} - ${bodyFromName} - ${bodyMessageDiscricty}` );
+    httpData.set('h:Reply-To', `${bodyFromName} ${bodyFromEmail}`);
+    httpData.set('html', bodyMessage);
+
+    return this.serviceRequest.post<any>(httpUrl, httpData, { headers: apiHeaders }).pipe(
+      retry(1),
+      catchError(error => {
+        return throwError(`Error Code: ${error.status}\nMessage: ${error.message}`);
+      })
+    );
   }
 }

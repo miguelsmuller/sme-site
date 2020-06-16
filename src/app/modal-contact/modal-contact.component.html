@@ -81,7 +81,7 @@
                 <mat-form-field appearance="fill" class="w-100">
                   <mat-label>Que tipo de manifestação deseja fazer?</mat-label>
                   <mat-select formControlName="tipoManifestacao">
-                    <mat-option *ngFor="let type of manifestationType" [value]="type" [value]="1">{{type}}</mat-option>
+                    <mat-option *ngFor="let type of manifestationType" [value]="type">{{type}}</mat-option>
                   </mat-select>
                   <mat-error *ngIf="form.controls.tipoManifestacao.hasError('required')">
                     Seu tipo de manifestação é um campo <strong>obrigatório</strong>.
