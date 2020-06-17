@@ -38,10 +38,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ReactiveFormsModule } from '@angular/forms';
 // import { FlexLayoutModule } from '@angular/flex-layout';
+import { RelativeTimePipe } from './relative-time.pipe';
 
 @NgModule({
   imports: [],
-  declarations: [],
+  declarations: [
+    RelativeTimePipe
+  ],
   exports: [
     // MatAutocompleteModule,
     // MatBadgeModule,
@@ -81,6 +84,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTooltipModule,
     ReactiveFormsModule,
     // FlexLayoutModule,
+    RelativeTimePipe
   ]
 })
 export class MaterialModule { }

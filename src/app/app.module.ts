@@ -15,6 +15,7 @@ import { DepartmentActionsComponent } from './department-actions/department-acti
 import { ModalContactComponent } from './modal-contact/modal-contact.component';
 import { ModalUnitListingComponent } from './modal-unit-listing/modal-unit-listing.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { ModalUnitListingComponent } from './modal-unit-listing/modal-unit-listi
     ListNewsComponent,
     DepartmentActionsComponent,
     ModalContactComponent,
-    ModalUnitListingComponent
+    ModalUnitListingComponent,
   ],
   imports: [
     BrowserModule,

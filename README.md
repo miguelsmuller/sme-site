@@ -67,7 +67,10 @@ git diff --cached
 - **[Comandos úteis do git](https://gist.github.com/leocomelli/2545add34e4fec21ec16)**
 
 ## **Changelog**  
-= **1.2.0 - 15/06/2020** =  
+= **1.2.0 - 01/07/2020** =  
+Melhoria de SEO e desempenho, Inserção do Google Analytics e Correão de Bugs  
+
+= **1.1.0 - 15/06/2020** =  
 Remoção de depências e correção do formulário de contato e da listagem de notícias  
 
 = **1.0.0 - 14/06/2020** =  
