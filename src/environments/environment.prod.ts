@@ -12,9 +12,9 @@ export const environment = {
   },
   departmentName: 'Secretaria Municipal de Educação',
   departmentOwer: 'Ana Paula Silva',
-  departmentAddres: 'Avenida João Batista Portugal, 230<br/>Centro – Rio Claro<br/>CEP: 27.460-000',
+  departmentAddres: 'Rdv. Saturnino Braga, RJ 155 - Km44<br/>Guarita – Rio Claro<br/>CEP: 27.460-000',
   departmentOpeningHours: 'De segunda-feira a sexta-feira<br/> 8:00h às 12:00h e 13:00h às 17:00h',
-  departmentPhone: '(24) 3332-1717 / (24) 3332-1292 <br/> Ramal: 240',
+  departmentPhone: '(24) 3332-1717 / (24) 3332-1292 <br/> Ramal: 460',
   departmentMail: 'educa@rioclaro.rj.gov.br',
   departmentSectors: [
     {
