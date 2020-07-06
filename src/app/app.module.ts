@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DepartmentActionsComponent } from './department-actions/department-actions.component';
 import { ModalContactComponent } from './modal-contact/modal-contact.component';
 import { ModalUnitListingComponent } from './modal-unit-listing/modal-unit-listing.component';
+import { DepartmentNumbersComponent } from './department-numbers/department-numbers.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ModalUnitListingComponent } from './modal-unit-listing/modal-unit-listi
     DepartmentActionsComponent,
     ModalContactComponent,
     ModalUnitListingComponent,
+    DepartmentNumbersComponent,
   ],
   imports: [
     BrowserModule,

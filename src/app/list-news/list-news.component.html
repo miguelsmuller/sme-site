@@ -7,7 +7,7 @@
     <div class="container-fluid">
 
       <ng-template [ngIf]="dataSource$ | async" [ngIfElse]="loading">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 d-flex flex-row flex-wrap align-items-stretch justify-content-center my-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 d-flex flex-row flex-wrap align-items-stretch justify-content-center my-4">
             <div class="text-center text-md-left col cols-stripedes py-5 px-4" *ngFor="let noticia of dataSource$ | async">
               <a href="{{noticia.link}}" rel="noreferrer" target="_blank"><h5 class="font-weight-bold">{{noticia.title.rendered}}</h5></a>
               <small class="text-black-50">{{noticia.date | relativeTime }}</small>

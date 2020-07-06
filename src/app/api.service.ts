@@ -20,8 +20,8 @@ export class Api {
     const httpUrl = `${this.apiNewsOptions.url}/posts`;
 
     let  httpParams = new HttpParams();
-    httpParams = httpParams.append('tags', this.apiNewsOptions.tag);
-    httpParams = httpParams.append('per_page', this.apiNewsOptions.count);
+    httpParams = httpParams.append('tags', '75');
+    httpParams = httpParams.append('per_page', '6');
     httpParams = httpParams.append('_fields', 'title, link, date');
 
     return this.serviceRequest.get<Noticia[]>(httpUrl, { params: httpParams }).pipe(
