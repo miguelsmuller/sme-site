@@ -67,6 +67,9 @@ git diff --cached
 - **[Comandos úteis do git](https://gist.github.com/leocomelli/2545add34e4fec21ec16)**
 
 ## **Changelog**  
+= **1.2.2 - 27/07/2020** =  
+Correção do Título da notícia
+
 = **1.2.1 - 27/07/2020** =  
 Nova Feature com números/estatísticas
 Atualização do Rodapé
