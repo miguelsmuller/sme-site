@@ -6,5 +6,5 @@ import { environment } from '@env/environment';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  departmentName = environment.departmentName;
+
 }

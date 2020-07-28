@@ -6,9 +6,6 @@ import { environment } from '@env/environment';
   templateUrl: './footer.component.html',
 })
 export class FooterComponent implements OnInit {
-  departmentName = environment.departmentName;
-  departmentAddres = environment.departmentAddres;
-
   constructor() { }
 
   ngOnInit(): void {

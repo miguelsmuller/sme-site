@@ -9,8 +9,16 @@ import { environment } from '@env/environment';
   providedIn: 'root'
 })
 export class Api {
-  apiNewsOptions = environment.apiNews;
-  apiEmailOptions = environment.apiEmail;
+  apiNewsOptions = {
+    url: 'https://www.rioclaro.rj.gov.br/wp-json/wp/v2',
+    count: '4',
+    tag: '75'
+  };
+  apiEmailOptions = {
+    url: '',
+    key: '',
+    emailFrom: ''
+  };
 
   constructor(
     private serviceRequest: HttpClient

@@ -10,12 +10,10 @@
       <ul class="list-group">
 
         <li class="list-group-item my-2 border-0" *ngFor='let unit of units'>
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-0 font-weight-bold text-primary">{{unit.unitName}}</h5>
-            <small>{{unit.unitLocality}} - {{unit.unitType}}</small>
-          </div>
+          <h5 class="mb-0 font-weight-bold text-primary">{{unit.unitName}}</h5>
           <p class="mb-0">{{unit.unitAddress}}</p>
-          <small>E-Mail: {{unit.unitEmail}}</small> - <small>{{unit.unitPhone}}</small>
+          <p class="mb-0"><small>Distrito: {{unit.unitLocality}} - Localização: {{unit.unitType}}</small></p>
+          <p class="mb-0"><small>E-Mail: {{unit.unitEmail}}</small> - <small>Telefone/Ramal: {{unit.unitPhone}}</small></p>
         </li>
 
       </ul>

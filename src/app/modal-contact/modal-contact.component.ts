@@ -13,9 +13,9 @@ import { environment } from '@env/environment';
   templateUrl: './modal-contact.component.html'
 })
 export class ModalContactComponent implements OnInit {
-  departmentSectors = environment.departmentSectors;
+  /* departmentSectors = environment.departmentSectors;
   cityLocations = environment.cityLocations;
-  manifestationType = environment.manifestationType;
+  manifestationType = environment.manifestationType; */
 
   form = this.formBuilder.group({
     nomeSolicitante: ['', [
@@ -52,7 +52,7 @@ export class ModalContactComponent implements OnInit {
   }
 
   sendEmail() {
-    if (this.form.valid) {
+    /* if (this.form.valid) {
       this.apiService.sendEmail(this.form.value).subscribe(
         (res) => {
           this.snackBar.open( 'Sua mensagem foi enviada com sucesso.', 'OK',
@@ -68,6 +68,6 @@ export class ModalContactComponent implements OnInit {
           console.log('err : ', err);
         }
       );
-    }
+    } */
   }
 }

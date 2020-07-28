@@ -1,7 +1,7 @@
 # **SME-SITE**
 > Site da Secretaria Municipal de Educação do Município de Rio Claro -  Site da Secretaria Municipal de Educação do Município de Rio Claro - Site da Secretaria Municipal de Educação do Município de Rio Claro - Site da Secretaria Municipal de Educação do Município de Rio Claro - Site da Secretaria Municipal de Educação do Município de Rio Claro - Site da Secretaria Municipal de Educação do Município de Rio Claro - Site da Secretaria Municipal de Educação do Município de Rio Claro - Site da Secretaria Municipal de Educação do Município de Rio Claro
 
-**Versão Estável:** 1.2.1  
+**Versão Estável:** 1.3.0  
 **Licensa:** Proprietário - Usu Privado  
 Todos os direitos reservados.  
 É estritamente proibida a cópia não autorizada de qualquer arquivo deste projeto, por qualquer meio.  
@@ -67,6 +67,14 @@ git diff --cached
 - **[Comandos úteis do git](https://gist.github.com/leocomelli/2545add34e4fec21ec16)**
 
 ## **Changelog**  
+
+= **1.3.0 - 18/11/2020** =  
+Ajustes para permitir exibição pública do projeto no GitHub
+
+= **1.2.3 - 26/10/2020** =  
+Alteração do Endereço da Sede da Secretaria
+Inclusão da ação "Fale Conosco" e remoção de outras
+
 = **1.2.2 - 27/07/2020** =  
 Correção do Título da notícia
 
